@@ -1,4 +1,4 @@
-﻿# Drive-by Download ML Lab
+# Drive-by Download ML Lab
 
 A PHP 8.x and MySQL 8.0 research portal based on the paper **"Detection of Drive-by Download Attacks Using Machine Learning Approach"** by Monther Aldwairi, Musaab Hasan, and Zayed Balbahaith.
 
