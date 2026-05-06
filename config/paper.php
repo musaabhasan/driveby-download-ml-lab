@@ -1,0 +1,58 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'portal' => [
+        'slug' => 'driveby-download-ml-lab',
+        'title' => 'Drive-by Download ML Lab',
+        'tagline' => 'A research portal for safe webpage source inspection, static feature extraction, and drive-by download detection experimentation.',
+    ],
+    'paper' => [
+        'title' => 'Detection of Drive-by Download Attacks Using Machine Learning Approach',
+        'authors' => ['Monther Aldwairi', 'Musaab Hasan', 'Zayed Balbahaith'],
+        'journal' => 'International Journal of Information Security and Privacy',
+        'publisher' => 'IGI Global',
+        'year' => 2017,
+        'volume' => '11',
+        'issue' => '4',
+        'pages' => '16-28',
+        'doi' => '10.4018/IJISP.2017100102',
+        'url' => 'https://doi.org/10.4018/IJISP.2017100102',
+        'dataset_size' => 5435,
+        'benign_urls' => 1181,
+        'malicious_urls' => 4254,
+        'features_selected' => 15,
+        'initial_features' => 26,
+        'classifiers_evaluated' => 23,
+        'best_classifier' => 'Bagged Trees',
+        'reported_best_accuracy' => 90.1,
+        'reported_best_tp_rate' => 96.24,
+        'reported_best_fp_rate' => 26.07,
+        'reported_auc' => 92.0,
+    ],
+    'feature_definitions' => [
+        ['key' => 'white_space_density', 'label' => 'White Space Density', 'description' => 'Measures unusual source spacing and padding concentration.', 'weight' => 0.45],
+        ['key' => 'tag_density', 'label' => 'HTML Tag Density', 'description' => 'Counts total HTML tags relative to source size.', 'weight' => 0.60],
+        ['key' => 'link_density', 'label' => 'Link Density', 'description' => 'Counts anchors and link-like references.', 'weight' => 0.55],
+        ['key' => 'variable_definitions', 'label' => 'Variable Definitions', 'description' => 'Detects JavaScript variable declarations in source text.', 'weight' => 0.85],
+        ['key' => 'loop_constructs', 'label' => 'Loop Constructs', 'description' => 'Detects JavaScript looping constructs often present in scripted payloads.', 'weight' => 0.80],
+        ['key' => 'iframe_count', 'label' => 'IFrame Count', 'description' => 'Counts iframe elements used in hidden loading and redirection chains.', 'weight' => 1.20],
+        ['key' => 'eval_calls', 'label' => 'Eval Calls', 'description' => 'Detects eval usage, a common indicator for interpreted script payloads.', 'weight' => 1.35],
+        ['key' => 'settimeout_calls', 'label' => 'setTimeout Calls', 'description' => 'Detects delayed script execution patterns.', 'weight' => 0.90],
+        ['key' => 'html_redirects', 'label' => 'HTML Redirection', 'description' => 'Detects meta refresh, location changes, and scripted navigation.', 'weight' => 1.15],
+        ['key' => 'opening_tags', 'label' => 'Opening Tags', 'description' => 'Counts opening tags as a structural complexity signal.', 'weight' => 0.45],
+        ['key' => 'function_calls', 'label' => 'Function Calls', 'description' => 'Counts JavaScript-like function invocation patterns.', 'weight' => 0.70],
+        ['key' => 'form_count', 'label' => 'Forms', 'description' => 'Counts form elements present in the source.', 'weight' => 0.55],
+        ['key' => 'input_fields', 'label' => 'Input Fields', 'description' => 'Counts input elements and form collection points.', 'weight' => 0.55],
+        ['key' => 'zero_pixel_objects', 'label' => 'Zero Pixel Objects', 'description' => 'Detects zero-dimension or hidden HTML objects and frames.', 'weight' => 1.35],
+        ['key' => 'onload_handlers', 'label' => 'Onload Handlers', 'description' => 'Detects automatic execution handlers triggered when the page loads.', 'weight' => 1.25],
+    ],
+    'classifiers' => [
+        ['rank' => 1, 'name' => 'Bagged Trees', 'accuracy' => 90.1, 'tp_rate' => 96.0, 'fp_rate' => 33.0, 'threshold' => 34.0, 'sensitivity' => 1.08, 'note' => 'Highest reported accuracy in the paper.'],
+        ['rank' => 2, 'name' => 'Weighted KNN, k=10', 'accuracy' => 89.8, 'tp_rate' => 97.0, 'fp_rate' => 36.0, 'threshold' => 35.0, 'sensitivity' => 1.04, 'note' => 'Top-five classifier selected for the final detection model.'],
+        ['rank' => 3, 'name' => 'Boosted Trees', 'accuracy' => 87.7, 'tp_rate' => 97.0, 'fp_rate' => 45.0, 'threshold' => 36.0, 'sensitivity' => 1.02, 'note' => 'Top-five classifier selected for the final detection model.'],
+        ['rank' => 4, 'name' => 'Medium Tree', 'accuracy' => 87.3, 'tp_rate' => 96.0, 'fp_rate' => 44.0, 'threshold' => 37.0, 'sensitivity' => 0.98, 'note' => 'Top-five classifier selected for the final detection model.'],
+        ['rank' => 5, 'name' => 'Cubic KNN, k=10', 'accuracy' => 87.2, 'tp_rate' => 96.0, 'fp_rate' => 44.0, 'threshold' => 37.0, 'sensitivity' => 0.96, 'note' => 'Top-five classifier selected for the final detection model.'],
+    ],
+];

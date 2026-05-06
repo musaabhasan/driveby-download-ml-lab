@@ -1,0 +1,21 @@
+{
+  "name": "musaabhasan/driveby-download-ml-lab",
+  "description": "PHP/MySQL research portal based on the drive-by download machine learning detection paper by Aldwairi, Hasan, and Balbahaith.",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "DrivebyLab\\": "src/"
+    }
+  },
+  "scripts": {
+    "lint": "php -d display_errors=1 bin/lint.php",
+    "test": "php -d display_errors=1 bin/test.php"
+  }
+}
