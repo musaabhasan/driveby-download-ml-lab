@@ -14,6 +14,7 @@ The paper evaluated 23 machine-learning classifiers on 5,435 webpages using stat
 
 - Safe URL/source inspection workflow that reads HTML as text and does not execute browser code.
 - Static feature extraction aligned with the paper's 15-feature approach.
+- Adversarial dataset shift review for temporal drift, campaign clustering, feature leakage, evasion pressure, and operational threshold decisions.
 - Research dashboard with dataset metrics, classifier model cards, experiments, and recent inspections.
 - Inspector interface for either a live URL or pasted HTML source.
 - JSON API for integration with other security dashboards or research notebooks.
@@ -74,6 +75,7 @@ bin/                 Lint and test scripts
 - [Security](docs/security.md)
 - [Testing](docs/testing.md)
 - [Model Evaluation Metrics Worksheet](docs/model-evaluation-metrics-worksheet.md)
+- [Adversarial Dataset Shift Review](docs/adversarial-dataset-shift-review.md)
 - [Extension Guide](docs/extension-guide.md)
 
 ## Production Notes
