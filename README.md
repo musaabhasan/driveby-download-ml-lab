@@ -67,6 +67,15 @@ docs/                Architecture, paper alignment, security, testing, and exten
 bin/                 Lint and test scripts
 ```
 
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Paper Alignment](docs/paper-alignment.md)
+- [Security](docs/security.md)
+- [Testing](docs/testing.md)
+- [Model Evaluation Metrics Worksheet](docs/model-evaluation-metrics-worksheet.md)
+- [Extension Guide](docs/extension-guide.md)
+
 ## Production Notes
 
 - Add authentication and role-based access before operational use.
